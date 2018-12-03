@@ -1,3 +1,23 @@
-<p>
-  client-form works!
-</p>
+<form [formGroup]="clientForm" (ngSubmit)="onSubmit()" class="form">
+    <mat-form-field>
+      <input matInput placeholder="Nome" [formControl]="f.firstName">
+      <mat-error *ngIf="f.firstName.invalid">{{getErrorMessageForFirstNameField()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Sobrenome" [formControl]="f.lastName">
+      <mat-error *ngIf="f.lastName.invalid">{{getErrorMessageForLastNameField()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="E-mail" [formControl]="f.email">
+      <mat-error *ngIf="f.email.invalid">{{getErrorMessageForEmailField()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Senha" [formControl]="f.password">
+      <mat-error *ngIf="f.password.invalid">{{getErrorMessageForPasswordField()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Idade" [formControl]="f.age">
+      <mat-error *ngIf="f.age.invalid">{{getErrorMessageForAgeField()}}</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" [disabled]="clientForm.invalid">Confirmar</button>
+  </form>

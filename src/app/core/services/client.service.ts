@@ -17,11 +17,10 @@ export class ClientService {
     return this.http.get<Client>(`client/${id}`);
   }
 
-  add(client: Client) {
-    return this.http.post('client', JSON.stringify(client));
-  }
-
-  update(id, client: Client) {
-    return this.http.put(`client/${id}`, JSON.stringify(client));
+  addOrUpdate(client: Client) {
+    if (!client._id) {
+      return this.http.post('client', JSON.stringify(client));
+    }
+    return this.http.put(`client/${client._id}`, JSON.stringify(client));
   }
 }

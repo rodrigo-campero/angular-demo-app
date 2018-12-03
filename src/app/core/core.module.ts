@@ -9,10 +9,26 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ApiPrefix } from './interceptors/api-prefix.interceptor';
 import { HttpToken } from './interceptors/http-token.interceptor';
 import { ErrorsHandler } from './interceptors/errors-handler.interceptor';
+import {
+  MatButtonModule,
+  MatIconModule,
+  MatMenuModule,
+  MatToolbarModule,
+} from '@angular/material';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    MatButtonModule,
+    MatIconModule,
+    MatMenuModule,
+    MatToolbarModule,
+    RouterModule
+  ],
+  exports: [
+    HeaderComponent,
+    FooterComponent
   ],
   providers: [
     AuthService,

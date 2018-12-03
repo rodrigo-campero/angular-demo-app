@@ -8,6 +8,7 @@ import { ClientService } from 'src/app/core/services/client.service';
 })
 export class ClientListComponent implements OnInit {
 
+  displayedColumns: string[] = ['fullName', 'email', 'age', 'actions'];
   dataSource: any;
   constructor(private clientService: ClientService) { }
 

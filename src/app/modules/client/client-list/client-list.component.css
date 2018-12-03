@@ -1,0 +1,8 @@
+table {
+    width: 100%;
+}
+.fab-button {
+    position: absolute;
+    right: 30px;
+    bottom: 15px;
+}
